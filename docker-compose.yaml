@@ -8,8 +8,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: hellodb
-      MYSQL_USER: hello_user
-      MYSQL_PASSWORD: hello_passoword
+      MYSQL_USER: hellouser
+      MYSQL_PASSWORD: hellopassword
     ports:
       - "3306:3306"
     volumes:
