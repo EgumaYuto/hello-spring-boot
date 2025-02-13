@@ -25,9 +25,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
 
-    implementation("org.flywaydb:flyway-core:11.3.1")
-    implementation("org.flywaydb:flyway-mysql:11.3.1")
-
     runtimeOnly("mysql:mysql-connector-java:8.0.33")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
