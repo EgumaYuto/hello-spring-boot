@@ -10,4 +10,7 @@ $ mysql -h 127.0.0.1 -u root -p
 
 $ # migration
 $ ./gradlew flywayMigrate
+
+$ # Generate Code
+$ ./gradlew generateHellodbJooq
 ```
