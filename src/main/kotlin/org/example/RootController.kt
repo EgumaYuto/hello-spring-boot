@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class RootController {
 
+    companion object {
+        private const val HELLO_WORLD = "Hello World!"
+    }
+
     @RequestMapping("/")
-    fun home() = "Hello World!"
+    fun home() = HELLO_WORLD
 }

@@ -11,6 +11,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
     id("org.flywaydb.flyway") version "11.3.1"
     id("nu.studer.jooq") version "8.0"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8"
 }
 
 group = "org.example"
@@ -70,6 +71,21 @@ jooq {
                     strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
                 }
             }
+        }
+    }
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    allRules = false
+    config.setFrom("$projectDir/config/detekt.yml")
+    baseline = file("$projectDir/config/baseline.xml")
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency {
+        if (requested.group == "org.jetbrains.kotlin") {
+            useVersion(io.gitlab.arturbosch.detekt.getSupportedKotlinVersion())
         }
     }
 }
