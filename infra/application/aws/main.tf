@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "hello-springboot-tfstate"
-    key    = "aws/platform"
+    key    = "aws/application"
     region = "ap-northeast-1"
   }
 }
