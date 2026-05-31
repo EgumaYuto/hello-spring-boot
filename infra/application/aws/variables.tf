@@ -22,3 +22,8 @@ variable "aurora_engine_version" {
   type    = string
   default = "8.0.mysql_aurora.3.08.0"
 }
+
+variable "image_tag" {
+  type    = string
+  default = "latest"
+}
