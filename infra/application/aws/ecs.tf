@@ -28,6 +28,14 @@ resource "aws_ecs_task_definition" "app" {
         {
           name  = "SPRING_DATASOURCE_URL"
           value = "jdbc:mysql://${aws_rds_cluster.aurora.endpoint}:${aws_rds_cluster.aurora.port}/${var.db_name}"
+        },
+        {
+          # Structured (ECS JSON) console logging in the container: each log event,
+          # stack traces included, becomes a single JSON line, so CloudWatch shows
+          # one tidy, queryable event instead of one per stack-trace line. Local
+          # `bootRun` does not set this, so it keeps human-readable plain text.
+          name  = "LOGGING_STRUCTURED_FORMAT_CONSOLE"
+          value = "ecs"
         }
       ]
 
