@@ -1,0 +1,6 @@
+[tools]
+# JVM: build.gradle.kts の jvmToolchain(21) と Dockerfile(eclipse-temurin:21) に合わせる
+java = "temurin-21"
+
+# Gradle は ./gradlew (wrapper, 8.10.2) で固定済みのため mise では管理しない
+# MySQL 8.0 は docker-compose で起動する
